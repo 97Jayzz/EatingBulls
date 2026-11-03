@@ -8,7 +8,8 @@ class Producto{
     protected $descripcion;
     protected $precio;
     protected $imagen;
-    protected $activo
+    protected $activo;
+    protected $categoria;
 
     //  CONSTRUCTOR
 
@@ -19,15 +20,32 @@ class Producto{
         $descripcion = null,
         $precio = null,
         $imagen = null,
-        $activo = null
+        $activo = null,
+        $categoria = null,
     ){
-        $this->id = $id;
-        $this->categoria_id = $categoria_id;
-        $this->nombre = $nombre;
-        $this->descripcion = $descripcion;
-        $this->precio = $precio;
-        $this->imagen = $imagen;
-        $this->activo = $activo;
+        if($id != null){
+            $this->id = $id;
+        }
+
+        if($categoria_id != null){
+            $this->categoria_id = $categoria_id;
+        }
+
+        if($nombre != null){
+            $this->nombre = $nombre;
+        }
+
+        if($descripcion != null){
+            $this->descripcion = $descripcion;
+        }
+
+        if($precio != null){
+            $this->precio = $precio;
+        }
+
+        if($categoria != null){
+            $this ->categoria = $categoria;
+        }
     }
 
 
@@ -38,7 +56,7 @@ class Producto{
     }
 
     public function getCategoriaId(){
-        return $this->categoriaid;
+        return $this->categoria_id;
     }
 
     public function getNombre(){
@@ -61,6 +79,10 @@ class Producto{
         return $this->activo;
     }
 
+    public function getCategoria(){
+        return $this->categoria;
+    }
+
 
     // SETTERS
 
@@ -70,8 +92,13 @@ class Producto{
     }
 
     public function setCategoriaId($categoria_id){
-        $this->categoriaid = $categoria_id;
+        $this->categoria_id = $categoria_id;
         return $this;
+    }
+
+    public function setNombre($nombre){
+        $this->nombre = $nombre;
+        return $this:
     }
 
     public function setDescripcion($descripcion){
@@ -84,7 +111,7 @@ class Producto{
         return $this;
     }
 
-    public funciton setImagen($imagen){
+    public function setImagen($imagen){
         $this->imagen = $imagen;
         return $this;
     }
@@ -93,9 +120,10 @@ class Producto{
         $this->activo = $activo;
         return $this;
     }
+
+    public function setCategoria($categoria){
+        $this->categoria = $categoria;
+        return $this;
+    }
 }
-
-
-
-
 ?>
