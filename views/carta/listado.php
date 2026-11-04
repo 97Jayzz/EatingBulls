@@ -1,17 +1,40 @@
-<h2>Nuestra carta</h2>
+<?php
+//  AGRUPAR PRODUCTOS POR CATEGORIA
+$productosPorCategoria = [];
 
-<?php foreach($productos as $producto): ?>
 
-    <article>
-        <h3><?php echo $producto->getNombre(); ?></h3>
+foreach($productos as $producto){
+    $categoria = $producto->getCategoria();
+    $productosPorCategoria[$categoria][] = $producto;
+}
 
-        <p><?php echo $producto->getDescripcion(); ?></p>
+?>
 
-        <p> Precio: <?php echo $producto->getPrecio(); ?></p>
+<!-- CONTENIDO PRINCIPAL -->
+ <div>
+    <h1>Nuestra Carta</h1>
 
-        <p>Categoria: <?php echo $producto->getCategoria(); ?></p>
-    </article>
-    
-    <hr>
+<!-- RECORRER ARRAY DE PRODUCTOS AGRUPADOS PARA TENER LA CATEGORIA Y SUS PRODUCTOS -->
+    <?php foreach($productosPorCategoria as $categoria => $productosCategoria){ ?>
 
-    <?php endforeach; ?>
+        <section>
+
+        <h2><?php echo $categoria; ?></h2>
+
+<!-- SE RECORREN LOS PRODUCTOS DE LA CATEGORIA ACTUAL -->
+        <?php foreach($productosCategoria as $producto){ ?>
+
+        <article>
+            <img src="<?php echo $producto->getImagen(); ?>" alt="<?php echo $producto->getNombre(); ?>">
+            <h3><?php echo $producto->getNombre(); ?></h3>
+            <p><?php echo $producto->getDescripcion(); ?></p>
+            <p><?php echo $producto->getPrecio(); ?> €</p>
+
+        </article>
+
+        <?php }?>
+
+    </section>
+
+    <?php } ?>
+ </div>
