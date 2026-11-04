@@ -1,16 +1,16 @@
 <?php
     // CONEXION CON LA BASE DE DATOS
-    require_once("Eating-Bulls/config/dataBase.php");
+    require_once("config/dataBase.php");
 
     // CLASE DE PRODUCTOS
-    require_once("/Producto.php");
+    require_once("models/Producto.php");
 
     class ProductoDAO{
 
         public static function getAll(){
 
             //1. connexion con la base de datos
-            $conexion = Database::connect();
+            $conexion = dataBase::connect();
 
             //2. Preparamos la consulta SQL
             $sql ="SELECT

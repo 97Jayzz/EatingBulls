@@ -98,7 +98,7 @@ class Producto{
 
     public function setNombre($nombre){
         $this->nombre = $nombre;
-        return $this:
+        return $this;
     }
 
     public function setDescripcion($descripcion){
