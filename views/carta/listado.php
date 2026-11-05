@@ -1,15 +1,3 @@
-<?php
-//  AGRUPAR PRODUCTOS POR CATEGORIA
-$productosPorCategoria = [];
-
-
-foreach($productos as $producto){
-    $categoria = $producto->getCategoria();
-    $productosPorCategoria[$categoria][] = $producto;
-}
-
-?>
-
 <!-- CONTENIDO PRINCIPAL -->
  <div>
     <h1>Nuestra Carta</h1>

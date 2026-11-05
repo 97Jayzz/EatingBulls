@@ -19,6 +19,7 @@
                         p.nombre,
                         p.descripcion,
                         p.precio,
+                        p.imagen,
                         c.nombre AS categoria
                     FROM productos p
                     INNER JOIN categorias c

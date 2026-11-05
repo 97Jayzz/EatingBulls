@@ -21,7 +21,7 @@ class Producto{
         $precio = null,
         $imagen = null,
         $activo = null,
-        $categoria = null,
+        $categoria = null
     ){
         if($id != null){
             $this->id = $id;
@@ -41,6 +41,14 @@ class Producto{
 
         if($precio != null){
             $this->precio = $precio;
+        }
+
+        if($imagen != null){
+            $this->imagen = $imagen;
+        }
+
+        if($activo != null){
+            $this->activo = $activo;
         }
 
         if($categoria != null){

@@ -11,6 +11,15 @@ class cartaController{
         // Vista en la que se quiere mostrar
         $view = "views/carta/listado.php";
 
+//  AGRUPAR PRODUCTOS POR CATEGORIA
+        $productosPorCategoria = [];
+
+
+        foreach($productos as $producto){
+            $categoria = $producto->getCategoria();
+            $productosPorCategoria[$categoria][] = $producto;
+        }
+        
         // Se carga la estructura principal
         include "views/main.php";
     }
