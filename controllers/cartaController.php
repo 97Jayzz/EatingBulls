@@ -21,7 +21,7 @@ class cartaController{
         }
         
         // Se carga la estructura principal
-        include "views/main.php";
+        include ("views/main.php");
     }
 }
 

@@ -1,0 +1,95 @@
+/* ========================================
+   ESTILOS GENERALES
+======================================== */
+
+/* TIPOGRAFÍA */
+
+@font-face {
+    font-family: 'BullFont';
+    src: url('../fonts/BullVAR.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #00162B;
+    color: #FFFFFF;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    width: 100%;
+    height: 85px;
+    padding: 0 4%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #001629;
+}
+
+/* LOGO */
+
+.header-logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+/* NAVEGACIÓN Y CARRITO */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* NAVEGACIÓN */
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+/* CARRITO */
+
+.header-cart a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px 12px;
+    border-radius: 25px;
+
+    background-color: #34495B;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 17px;
+    
+}
+
+.header-cart img {
+    width: 20px;
+    height: 20px;
+}
+
+.precioBoton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}

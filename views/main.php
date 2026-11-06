@@ -6,10 +6,12 @@
     <title>Eating Bulls - Carta</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="views/css/styles.css">
 </head>
 <body>
-
+    <?php include_once("views/layout/header.php"); ?>
     <?php include_once($view); ?>
-<!-- Insertar el footer y el header con el include -->
+    <?php include_once("views/layout/footer.php"); ?>
+
 </body>
 </html>
