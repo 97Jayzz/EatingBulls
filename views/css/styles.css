@@ -11,11 +11,20 @@
     font-style: normal;
 }
 
+/* VARIABLES DE DISEÑO (colores del Figma) */
+:root {
+    --color-fondo: #00162B;
+    --color-rojo: #DB0A40;
+    --color-texto: #FFFFFF;
+    --color-suave: rgba(255, 255, 255, 0.2);
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #00162B;
-    color: #FFFFFF;
+    font-family: 'BullFont', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 /* ========================================
