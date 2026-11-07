@@ -1,6 +1,6 @@
 <?php
 // URL BASE DEL PROYECTO
-define("url", "http://localhost/Eating-Bulls/");
+define("url", "http://localhost/EatingBulls/");
 
 // CONTROLADOR Y ACCIÓN POR DEFECTO
 define("default_controller","carta");
