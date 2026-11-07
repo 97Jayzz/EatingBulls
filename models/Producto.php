@@ -80,6 +80,10 @@ class Producto{
     }
 
     public function getImagen(){
+        // Si el producto no tiene la imagen, se usa imagen por defecto
+        if($this->imagen === null || $this->imagen === ''){
+            return 'img/productos/sinImagen.webp';
+        }
         return $this->imagen;
     }
 
