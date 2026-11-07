@@ -1,32 +1,35 @@
-<!-- CONTENIDO PRINCIPAL -->
- <div class="carta">
+<main class="carta">
     <h1>Nuestra Carta</h1>
 
-<!-- RECORRER ARRAY DE PRODUCTOS AGRUPADOS PARA TENER LA CATEGORIA Y SUS PRODUCTOS -->
-    <?php foreach($productosPorCategoria as $categoria => $productosCategoria){ ?>
+    <!-- PASTILLAS: una por categoría -->
+    <nav class="categorias-nav">
+        <?php foreach ($categorias as $id => $nombre) { ?>
+            <a class="pastilla pastilla-<?= $id ?>" href="#categoria-<?= $id ?>">
+                <?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php } ?>
+    </nav>
 
-        <section class="categoria">
+    <!-- SECCIONES: una por categoría, con sus tarjetas dentro -->
+    <?php foreach ($categorias as $id => $nombre) { ?>
+        <section class="categoria" id="categoria-<?= $id ?>">
+            <h2><?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?></h2>
 
-        <h2><?php echo $categoria; ?></h2>
+            <div class="fila-productos">
+                <?php foreach ($productosPorCategoria[$id] as $producto) { ?>
+                    <article class="producto">
+                        <img src="<?= htmlspecialchars($producto->getImagen(), ENT_QUOTES, 'UTF-8') ?>"
+                             alt="<?= htmlspecialchars($producto->getNombre(), ENT_QUOTES, 'UTF-8') ?>">
+                        <h3><?= htmlspecialchars($producto->getNombre(), ENT_QUOTES, 'UTF-8') ?></h3>
+                        <p><?= htmlspecialchars($producto->getDescripcion(), ENT_QUOTES, 'UTF-8') ?></p>
 
-<!-- SE RECORREN LOS PRODUCTOS DE LA CATEGORIA ACTUAL -->
-        <?php foreach($productosCategoria as $producto){ ?>
-
-        <article class="producto">
-            <img src="<?php echo $producto->getImagen(); ?>" alt="<?php echo $producto->getNombre(); ?>">
-            <h3><?php echo $producto->getNombre(); ?></h3>
-            <p><?php echo $producto->getDescripcion(); ?></p>
-
-            <div class="precioBoton">
-                <button type="button">Añadir al carrito</button>
-                <p><?php echo $producto->getPrecio(); ?> €</p>
+                        <div class="precioBoton">
+                            <button type="button">Añadir al carrito</button>
+                            <p><?= number_format((float) $producto->getPrecio(), 2, ',', '.') ?> €</p>
+                        </div>
+                    </article>
+                <?php } ?>
             </div>
-
-        </article>
-
-        <?php }?>
-
-    </section>
-
+        </section>
     <?php } ?>
- </div>
+</main>
