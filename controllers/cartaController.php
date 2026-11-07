@@ -11,7 +11,7 @@ class cartaController{
         // Vista en la que se quiere mostrar
         $view = "views/carta/listado.php";
 
-        $cateogrias = [];               // id de la categoria => nombre
+        $categorias = [];               // id de la categoria => nombre
         $productosPorCategoria = [];    // id de la categoria => lísta de sus productos
 
         foreach($productos as $producto){
