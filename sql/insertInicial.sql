@@ -77,70 +77,114 @@ INSERT INTO ingredientes (nombre, precio_extra) VALUES
 -- 3. PRODUCTOS
 -- =====================================================
 
--- HAMBURGUESAS
+INSERT INTO productos
+(id, categoria_id, nombre, descripcion, precio, imagen, activo)
+VALUES
 
-INSERT INTO productos (categoria_id, nombre, descripcion, precio) VALUES
-(1, 'Mad Max',
-'Doble ternera, doble cheddar, bacon crujiente, cebolla caramelizada, salsa BBQ ahumada y salsa de la casa.', 17.50),
-(1, 'Petit Prost',
-'Ternera, cheddar, pepinillos, cebolla, mostaza y salsa burger.', 14.50),
-(1, 'Pole Position',
-'Doble ternera, cheddar, lechuga, tomate, cebolla morada y salsa especial.', 16.50),
-(1, 'Apex Chicken',
-'Pollo crujiente, cheddar, lechuga, pepinillos y mayonesa ligeramente picante.', 15.50),
-(1, 'Green Flag',
-'Hamburguesa vegetal, queso, lechuga, tomate y salsa de yogur y hierbas.', 15.00);
+-- HAMBURGUESAS (categoria 1)
+(1, 1, 'Mad Max',
+'Ternera premium, cheddar fundido, bacon ahumado, cebolla crujiente, lechuga fresca y salsa especial de la casa en pan de carbón negro.',
+17.50, 'img/productos/hamburguesas/madMax.webp', 1),
 
--- ENTRANTES
+(2, 1, 'Petit Prost',
+'Ternera premium, cheddar fundido, lechuga, cebolla crujiente y salsa especial de la casa en pan de carbón negro.',
+14.50, 'img/productos/hamburguesas/petiteProst.webp', 1),
 
-INSERT INTO productos (categoria_id, nombre, descripcion, precio) VALUES
-(2, 'Grid Nachos',
-'Nachos con cheddar fundido, jalapenos, pico de gallo y salsa agria.', 10.50),
-(2, 'DRS Chicken Tenders',
-'Tiras de pollo crujientes con una salsa a elegir.', 11.50),
-(2, 'Fast Lane Onion Rings',
-'Aros de cebolla rebozados con salsa BBQ.', 8.50),
-(2, 'Pit Lane Fries',
-'Patatas fritas con sal y especias.', 5.50),
-(2, 'Turbo Fries',
-'Patatas con cheddar fundido, bacon crujiente y salsa de la casa.', 9.00);
+(3, 1, 'Double Stack',
+'Doble ternera, cheddar, lechuga, tomate, cebolla morada y salsa especial.',
+16.50, 'img/productos/hamburguesas/doubleStack.webp', 1),
 
--- BEBIDAS
+(4, 1, 'Chick Norris',
+'Pollo crujiente, cheddar, lechuga, pepinillos y mayonesa ligeramente picante.',
+15.50, 'img/productos/hamburguesas/chickNorris.webp', 1),
 
-INSERT INTO productos (categoria_id, nombre, descripcion, precio) VALUES
-(3, 'Red Bull Original', 'Lata clasica de Red Bull.', 3.50),
-(3, 'Red Bull Sugarfree', 'Red Bull sin azucar.', 3.50),
-(3, 'Victory Cola', 'Refresco de cola con hielo.', 3.00),
-(3, 'Pit Stop Lemonade', 'Limonada con hielo y limon.', 4.00),
-(3, 'Podium Shake', 'Batido cremoso de chocolate.', 6.50);
+(5, 1, 'Green Flag',
+'Hamburguesa vegetal, queso, lechuga, tomate y salsa de yogur y hierbas.',
+15.00, 'img/productos/hamburguesas/greenFlag.webp', 1),
 
--- POSTRES
+-- ENTRANTES (categoria 2)
+(6, 2, 'Grid Nachos',
+'Nachos con cheddar fundido, jalapeños, pico de gallo y salsa agria.',
+10.50, 'img/productos/entrantes/gridNachos.webp', 1),
 
-INSERT INTO productos (categoria_id, nombre, descripcion, precio) VALUES
-(4, 'Photo Finish Brownie',
-'Brownie de chocolate templado con helado de vainilla.', 7.00),
-(4, 'Fast Lap Lava Cake',
-'Bizcocho de chocolate con corazon fundente.', 7.50),
-(4, 'Pit Stop Cookie',
-'Cookie de chocolate con helado de vainilla.', 6.00),
-(4, 'Grand Prix Pancakes',
-'Tortitas con sirope, fruta y nata.', 7.00),
-(4, 'RB22 Dessert',
-'Mousse de vainilla y chocolate blanco, frutos rojos y llanta de chocolate azul.', 8.50);
+(7, 2, 'Chicken Tenders',
+'Tiras de pollo crujientes con una salsa a elegir.',
+11.50, 'img/productos/entrantes/chickenTenders.webp', 1),
 
--- THE GRAND TOUR MENU: MEXICO
+(8, 2, 'Onion Rings',
+'Aros de cebolla rebozados con salsa BBQ.',
+8.50, 'img/productos/entrantes/arosCebolla.webp', 1),
 
-INSERT INTO productos (categoria_id, nombre, descripcion, precio) VALUES
-(5, 'Mexico Grand Prix Burger',
-'Doble ternera, queso, guacamole, jalapenos y mayonesa de chipotle.', 18.00),
-(5, 'Hermanos Nachos',
-'Nachos con cheddar, guacamole, pico de gallo y jalapenos.', 10.50),
-(5, 'Paddock Tacos',
-'Tacos de cochinita pibil con cebolla morada y cilantro.', 12.00),
-(5, 'Podium Tres Leches',
-'Bizcocho tradicional mexicano de tres leches.', 7.50),
-(5, 'Mexico Victory Horchata',
-'Bebida tradicional de arroz, leche y canela.', 5.00);
+(9, 2, 'Tequeños',
+'Palitos de masa crujiente rellenos de queso fundido.',
+5.50, 'img/productos/entrantes/tequenos.webp', 1),
+
+(10, 2, 'Boost Fries',
+'Patatas con cheddar fundido, bacon crujiente y salsa de la casa.',
+9.00, 'img/productos/entrantes/boostFries.webp', 1),
+
+-- BEBIDAS (categoria 3)
+(11, 3, 'Red Bull Original',
+'Lata clásica de Red Bull.',
+3.50, 'img/productos/bebidas/redBull.webp', 1),
+
+(12, 3, 'Red Bull Sugarfree',
+'Red Bull sin azúcar.',
+3.50, 'img/productos/bebidas/redBullFree.webp', 1),
+
+(13, 3, 'Victory Cola',
+'Refresco de cola con hielo.',
+3.00, 'img/productos/bebidas/cocacola.webp', 1),
+
+(14, 3, 'Agua',
+'Botella de agua.',
+4.00, 'img/productos/bebidas/agua.webp', 1),
+
+(15, 3, 'Podium Shake',
+'Batido cremoso de chocolate.',
+6.50, 'img/productos/bebidas/podiumShake.webp', 1),
+
+-- POSTRES (categoria 4)
+(16, 4, 'The Graining Brownie',
+'Brownie de chocolate templado con helado de vainilla.',
+7.00, 'img/productos/postres/theGrainingB.webp', 1),
+
+(17, 4, 'Cheesecake',
+'Cheesecake con azúcar glas, frambuesas y nata.',
+7.50, 'img/productos/postres/cheesecake.webp', 1),
+
+(18, 4, 'Pit Stop Cookie',
+'Cookie de chocolate con helado de vainilla.',
+6.00, 'img/productos/postres/pitStopCookie.webp', 1),
+
+(19, 4, 'Grand Prix Pancakes',
+'Tortitas con sirope, fruta y nata.',
+7.00, 'img/productos/postres/grandPrixPancakes.webp', 1),
+
+(20, 4, 'RB22 Dessert',
+'Mousse de vainilla y chocolate blanco, frutos rojos y llanta de chocolate azul.',
+8.50, 'img/productos/postres/rb22.webp', 1),
+
+-- THE GRAND TOUR MENU: MEXICO (categoria 5, imágenes pendientes)
+(21, 5, 'Mexico Grand Prix Burger',
+'Doble ternera, queso, guacamole, jalapeños y mayonesa de chipotle.',
+18.00, NULL, 1),
+
+(22, 5, 'Hermanos Nachos',
+'Nachos con cheddar, guacamole, pico de gallo y jalapeños.',
+10.50, NULL, 1),
+
+(23, 5, 'Paddock Tacos',
+'Tacos de cochinita pibil con cebolla morada y cilantro.',
+12.00, NULL, 1),
+
+(24, 5, 'Podium Tres Leches',
+'Bizcocho tradicional mexicano de tres leches.',
+7.50, NULL, 1),
+
+(25, 5, 'Mexico Victory Horchata',
+'Bebida tradicional de arroz, leche y canela.',
+5.00, NULL, 1);
 
 
 -- =====================================================
