@@ -183,6 +183,7 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
     gap: 27px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
 
 /* TARJETA DE PRODUCTO */
@@ -247,3 +248,28 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
     font-size: 16px;
     font-weight: 500;
 }
+
+
+.fila-productos::-webkit-scrollbar { display: none; }
+
+.carrusel { position: relative; }
+
+.flecha {
+    position: absolute;
+    top: 164px;               /* centro de la imagen de 375px */
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+.flecha-izq { left: -72px; }
+.flecha-der { right: -72px; }
+
+.flecha-izq img { transform: rotate(90deg); }
+.flecha-der img { transform: rotate(-90deg); }

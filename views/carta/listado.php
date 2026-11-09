@@ -15,20 +15,29 @@
         <section class="categoria" id="categoria-<?= $id ?>">
             <h2><?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?></h2>
 
-            <div class="fila-productos">
-                <?php foreach ($productosPorCategoria[$id] as $producto) { ?>
+            <div class="carrusel">
+                <button class="flecha flecha-izq" type="button" aria-label="Anterior">
+                    <img src="img/icons/dFlecha.svg" alt="">
+                </button>
+                
+                <div class="fila-productos">
+                    <?php foreach ($productosPorCategoria[$id] as $producto) { ?>
                     <article class="producto">
                         <img src="<?= htmlspecialchars($producto->getImagen(), ENT_QUOTES, 'UTF-8') ?>"
-                             alt="<?= htmlspecialchars($producto->getNombre(), ENT_QUOTES, 'UTF-8') ?>">
+                        alt="<?= htmlspecialchars($producto->getNombre(), ENT_QUOTES, 'UTF-8') ?>">
                         <h3><?= htmlspecialchars($producto->getNombre(), ENT_QUOTES, 'UTF-8') ?></h3>
                         <p><?= htmlspecialchars($producto->getDescripcion(), ENT_QUOTES, 'UTF-8') ?></p>
-
+                        
                         <div class="precioBoton">
                             <button type="button">Añadir al carrito</button>
                             <p><?= number_format((float) $producto->getPrecio(), 2, ',', '.') ?> €</p>
                         </div>
                     </article>
-                <?php } ?>
+                    <?php } ?>
+                </div>
+                <button class="flecha flecha-der" type="button" aria-label="Siguiente">
+                    <img src="img/icons/dFlecha.svg" alt="">
+                </button>
             </div>
         </section>
     <?php } ?>
