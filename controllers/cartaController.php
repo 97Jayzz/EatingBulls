@@ -24,6 +24,13 @@ class cartaController{
         // Se carga la estructura principal
         include ("views/main.php");
     }
+
+    public function show(){
+
+        $producto = ProductoDAO::getById();
+
+        $view = "views/"
+    }
 }
 
 ?>
