@@ -11,11 +11,20 @@
     font-style: normal;
 }
 
+/* VARIABLES DE DISEÑO (colores del Figma) */
+:root {
+    --color-fondo: #00162B;
+    --color-rojo: #DB0A40;
+    --color-texto: #FFFFFF;
+    --color-suave: rgba(255, 255, 255, 0.2);
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #00162B;
-    color: #FFFFFF;
+    font-family: 'BullFont', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 /* ========================================
@@ -32,37 +41,47 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    background-color: #001629;
+    background-color: var(--color-fondo);
 }
 
-/* LOGO */
+/* LOGO: caja de 177x66 que recorta los márgenes transparentes de la imagen */
+
+.header-logo {
+    width: 177px;
+    height: 66px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .header-logo img {
-    width: 120px;
+    width: 196px;
+    max-width: none;
     height: auto;
-    display: block;
+    flex-shrink: 0;
 }
 
 /* NAVEGACIÓN Y CARRITO */
 .header-right {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
 }
-
-/* NAVEGACIÓN */
 
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 45px;
 }
 
 .header-nav a {
-    color: #FFFFFF;
+    color: var(--color-texto);
     text-decoration: none;
-    font-size: 21px;
-    font-weight: 600;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
 }
 
 /* CARRITO */
@@ -70,26 +89,232 @@ body {
 .header-cart a {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 
-    padding: 6px 12px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 90px;
 
-    background-color: #34495B;
-    color: #FFFFFF;
+    background-color: var(--color-suave);
+    color: var(--color-texto);
     text-decoration: none;
-    font-size: 17px;
-    
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
 }
 
 .header-cart img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
+/* ========================================
+   CARTA
+======================================== */
+
+.carta {
+    padding: 200px 9% 0;
+    
+      /* Marca de agua del toro, detrás de las tarjetas */
+    background-image: url('../../img/fondoToro.svg');
+    background-repeat: no-repeat;
+    background-size: 117% auto;
+    background-position: center 470px;
+}
+
+/* Título: Bull VAR Heavy, 60px */
+.carta h1 {
+    margin: 0 0 40px;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* PASTILLAS DE CATEGORÍA */
+
+.categorias-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 100px;
+}
+
+.pastilla {
+    padding: 10px 20px;
+    border-radius: 90px;
+    background-color: var(--color-suave);
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+/* La pastilla activa es la de la sección a la que se ha saltado (:target) */
+body:has(#categoria-1:target) .pastilla-1,
+body:has(#categoria-2:target) .pastilla-2,
+body:has(#categoria-3:target) .pastilla-3,
+body:has(#categoria-4:target) .pastilla-4,
+body:has(#categoria-5:target) .pastilla-5 {
+    background-color: var(--color-rojo);
+}
+
+/* Si todavía no se ha pulsado ninguna, la primera aparece activa */
+body:not(:has(.categoria:target)) .pastilla:first-child {
+    background-color: var(--color-rojo);
+}
+
+/* SECCIONES */
+
+.categoria {
+    margin-bottom: 60px;
+}
+
+.categoria h2 {
+    margin: 0 0 46px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* FILA DE TARJETAS (se desliza en horizontal) */
+
+.fila-productos {
+    display: flex;
+    gap: 27px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+/* TARJETA DE PRODUCTO */
+
+.producto {
+    flex: 0 0 375px;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+
+.producto img {
+    display: block;
+    width: 375px;
+    height: 375px;
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 0.6;
+}
+
+/* Nombre: 28px Medium */
+.producto h3 {
+    margin: 25px 0 10px;
+    padding: 0 25px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+/* Descripción: 16px Regular, el texto baja a la línea siguiente si es largo */
+.producto > p {
+    margin: 0 0 22px;
+    padding: 0 25px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* Botón y precio, siempre en la parte de abajo de la tarjeta */
 .precioBoton {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 20px;
+    margin-top: auto;
+    padding: 0 25px;
+}
+
+.precioBoton button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--color-rojo);
+    color: var(--color-texto);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.precioBoton p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.fila-productos::-webkit-scrollbar { display: none; }
+
+.carrusel { position: relative; }
+
+.flecha {
+    position: absolute;
+    top: 164px;               /* centro de la imagen de 375px */
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+.flecha-izq { left: -72px; }
+.flecha-der { right: -72px; }
+
+.flecha-izq img { transform: rotate(90deg); }
+.flecha-der img { transform: rotate(-90deg); }
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 200px 9% 120px;
+}
+
+.footer a,
+.footer p {
+    color: var(--color-texto);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    margin: 0;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.redes {
+    display: flex;
+    gap: 40px;
+    margin-top: 9px;
+}
+
+.redes a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes img {
+    width: 22px;
+    height: 22px;
 }
