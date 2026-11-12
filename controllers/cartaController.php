@@ -9,7 +9,7 @@ class cartaController{
         $productos = ProductoDAO::getAll();
 
         // Vista en la que se quiere mostrar
-        $view = "views/carta/listado.php";
+        $view = "views/productos/listado.php";
 
         $categorias = [];               // id de la categoria => nombre
         $productosPorCategoria = [];    // id de la categoria => lísta de sus productos
@@ -27,10 +27,21 @@ class cartaController{
 
     public function show(){
 
-        $producto = ProductoDAO::getById();
+        if(!isset($_GET['id']) || !ctype_digit((string) $_GET['id'])){
+            header('Location:?controller=carta');
+            exit;
+        }
 
-        $view = "views/"
+        $producto = ProductoDAO::getById((int) $_GET['id']);
+
+        if($producto === null){
+            header('Location:?controller=carta');
+            exit;
+        }
+
+        $view = "views/productos/show.php";
+
+        include("views/main.php");
     }
 }
-
 ?>
