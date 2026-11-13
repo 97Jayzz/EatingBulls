@@ -318,3 +318,24 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
     width: 22px;
     height: 22px;
 }
+
+
+/*VISTA DETALLE SHOW */
+
+.banner{
+    position: relative;
+}
+
+.banner img{
+    width: 488px;
+    object-fit: cover;
+    opacity: 0.8;
+    display: block;
+}
+
+.banner::after{
+    content: "";
+    position: absolute;
+    background: linear-gradient(to top,#00162B 8.65%, rgba(0,22,43,0.5) 50.5%,
+     rgba(0,22,43,0.3) 100%);
+}

@@ -24,7 +24,8 @@
                     <?php foreach ($productosPorCategoria[$id] as $producto) { ?>
                     <article class="producto">
                         <a href="?controller=carta&action=show&id=<?=(int) $producto->getId()?>">
-                            <img src="<?= htmlspecialchars($producto->getImagen(), ENT_QUOTES, 'UTF-8') ?>"  alt="<?= htmlspecialchars($producto->getNombre(), ENT_QUOTES, 'UTF-8') ?>">
+                            <img src="<?= htmlspecialchars($producto->getImagen(), ENT_QUOTES, 'UTF-8') ?>"
+                              alt="<?= htmlspecialchars($producto->getNombre(), ENT_QUOTES, 'UTF-8') ?>">
                         </a>
                         <h3><?= htmlspecialchars($producto->getNombre(), ENT_QUOTES, 'UTF-8') ?></h3>
                         <p><?= htmlspecialchars($producto->getDescripcion(), ENT_QUOTES, 'UTF-8') ?></p>
