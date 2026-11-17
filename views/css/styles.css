@@ -354,6 +354,8 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
     grid-template-columns: 429px 1fr;
     gap: 44px;
     padding: 0 5% 0 8%;
+    margin-top: -23px;
+    position: relative;
 }
 
 .img-detalle{
@@ -361,4 +363,11 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
     height: 439px;
     object-fit: cover;
     display: block;
+}
+
+.fila-dorsal h1{
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
 }
