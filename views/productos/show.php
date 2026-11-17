@@ -23,10 +23,10 @@
             
             <!--Parte derecha -->
             <div class="col-der">
-                <h3>Ingredientes:</h3>
+                <h3>Ingredientes</h3>
                 <!-- En caso de que si ponga los dos botones -->
                 
-                <p><?= htmlspecialchars($producto->getDescripcion(), ENT_QUOTES, 'UTF-8') ?></p>
+                <p class="descripcion-detalle"><?= htmlspecialchars($producto->getDescripcion(), ENT_QUOTES, 'UTF-8') ?></p>
                 <!-- CAJA -->
                 <div class="caja-extras">
                     
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 
-                <div>
+                <div class="total-detalle">
                     <p>TOTAL:
                         <?= number_format((float) $producto->getPrecio(), 2, ',', '.') ?> €
                     </p>
