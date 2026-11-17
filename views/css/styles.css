@@ -348,3 +348,17 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
 .main-detalle{
     margin-top: calc(-1 * var(--alto-header));
 }
+
+.contenido-detalle{
+    display: grid;
+    grid-template-columns: 429px 1fr;
+    gap: 44px;
+    padding: 0 5% 0 8%;
+}
+
+.img-detalle{
+    width: 100%;
+    height: 439px;
+    object-fit: cover;
+    display: block;
+}
