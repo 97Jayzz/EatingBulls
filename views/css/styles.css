@@ -363,6 +363,7 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
     height: 439px;
     object-fit: cover;
     display: block;
+    border-radius: 20px;
 }
 
 .fila-dorsal h1{
@@ -370,4 +371,58 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
     font-weight: 800;
     line-height: 1;
     margin: 0;
+}
+
+.col-der h3{
+    margin-bottom: 0;
+    border-bottom: solid var(--color-rojo) 2px;
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.descripcion-detalle{
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 37px;
+    margin-bottom: 38px;
+}
+
+.caja-extras{
+    background-color: var(--color-suave);
+    border-radius: 20px;
+    padding: 38px 35px;
+}
+
+.caja-extras h2{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+
+.total-detalle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    margin-top: 27px;
+}
+
+.total-detalle p{
+    font-size: 43px;
+    font-weight: 800;
+}
+
+.total-detalle button{
+    width: 395px;
+    height: 50px;
+    background-color: var(--color-rojo);
+    border: none;
+    border-radius: 90px;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--color-texto);
+    cursor: pointer;
 }
