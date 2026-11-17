@@ -17,6 +17,7 @@
     --color-rojo: #DB0A40;
     --color-texto: #FFFFFF;
     --color-suave: rgba(255, 255, 255, 0.2);
+    --alto-header: 85px;
 }
 
 body {
@@ -33,7 +34,10 @@ body {
 
 .header {
     width: 100%;
-    height: 85px;
+    height: var(--alto-header);
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
     padding: 0 4%;
     box-sizing: border-box;
 
@@ -41,7 +45,6 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    background-color: var(--color-fondo);
 }
 
 /* LOGO: caja de 177x66 que recorta los márgenes transparentes de la imagen */
@@ -317,4 +320,109 @@ body:not(:has(.categoria:target)) .pastilla:first-child {
 .redes img {
     width: 22px;
     height: 22px;
+}
+
+
+/*VISTA DETALLE SHOW */
+
+.banner{
+    position: relative;
+}
+
+.banner img{
+    height: 488px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    display: block;
+}
+
+.banner::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,#00162B 8.65%, rgba(0,22,43,0.5) 50.5%,
+     rgba(0,22,43,0.3) 100%);
+}
+
+.main-detalle{
+    margin-top: calc(-1 * var(--alto-header));
+}
+
+.contenido-detalle{
+    display: grid;
+    grid-template-columns: 429px 1fr;
+    gap: 44px;
+    padding: 0 5% 0 8%;
+    margin-top: -23px;
+    position: relative;
+}
+
+.img-detalle{
+    width: 100%;
+    height: 439px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.fila-dorsal h1{
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+}
+
+.col-der h3{
+    margin-bottom: 0;
+    border-bottom: solid var(--color-rojo) 2px;
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.descripcion-detalle{
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 37px;
+    margin-bottom: 38px;
+}
+
+.caja-extras{
+    background-color: var(--color-suave);
+    border-radius: 20px;
+    padding: 38px 35px;
+}
+
+.caja-extras h2{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+
+.total-detalle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    margin-top: 27px;
+}
+
+.total-detalle p{
+    font-size: 43px;
+    font-weight: 800;
+}
+
+.total-detalle button{
+    width: 395px;
+    height: 50px;
+    background-color: var(--color-rojo);
+    border: none;
+    border-radius: 90px;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--color-texto);
+    cursor: pointer;
 }
