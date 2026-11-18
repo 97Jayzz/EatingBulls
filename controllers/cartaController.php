@@ -25,6 +25,18 @@ class cartaController{
         include ("views/main.php");
     }
 
+    
+    public function api(){
+        $metodo = $_SERVER['REQUEST_METHOD'];
+        if($metodo == "GET"){
+            $productos = ProductoDAO::getAllJson();
+            echo json_encode($productos);
+        } else if($metodo == "DELETE"){
+            $datos=json_decode(file_get_contents('php://input'),true);
+            // echo $datos
+        }
+    }
+
     public function show(){
 
         if(!isset($_GET['id']) || !ctype_digit((string) $_GET['id'])){
