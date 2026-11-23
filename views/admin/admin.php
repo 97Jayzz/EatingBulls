@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script></script>
+    <title>Eating Bulls - Admin</title>
 </head>
 <body>
-    <section data-view="productos" hidden>
+    <h1>Panel de administración</h1>
 
-    <form action="" id="eliminarProducto">
-        <input type="number" placeholder="que id quieres eliminar?">
-        <input type="submit">
+    <form id="eliminarProducto">
+        <input type="number" placeholder="¿Qué id quieres eliminar?">
+        <input type="submit" value="Eliminar">
     </form>
+
     <table>
         <thead>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Talla</th>
-            <th>Precio</th>
-            <th>Acciones</th>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+            </tr>
         </thead>
-        <tbody id="productos">
-
-        </tbody>
+        <tbody id="productos"></tbody>
     </table>
-    </section>
+
     <script src="views/admin/main.js"></script>
 </body>
 </html>

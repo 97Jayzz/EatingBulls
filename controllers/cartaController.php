@@ -33,7 +33,9 @@ class cartaController{
             echo json_encode($productos);
         } else if($metodo == "DELETE"){
             $datos=json_decode(file_get_contents('php://input'),true);
-            // echo $datos
+            // ProductoDAO::destroy($datos)
+            // http_response_code(500);
+           // echo json_encode("el numero recibido es: ".$datos);
         }
     }
 
