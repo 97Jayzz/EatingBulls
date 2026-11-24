@@ -3,7 +3,7 @@
     <!--LOGO -->
     <div class="header-logo">
         <a href="<?php echo url; ?>">
-            <img src="img/logoEatingBulls.webp" alt="Eating Bulls">
+            <img src="img/logoEatingBulls.svg" alt="Eating Bulls">
         </a>
     </div>
 
