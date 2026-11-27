@@ -23,35 +23,35 @@ class Producto{
         $activo = null,
         $categoria = null
     ){
-        if($id != null){
+        if($id !== null){
             $this->id = $id;
         }
 
-        if($categoria_id != null){
+        if($categoria_id !== null){
             $this->categoria_id = $categoria_id;
         }
 
-        if($nombre != null){
+        if($nombre !== null){
             $this->nombre = $nombre;
         }
 
-        if($descripcion != null){
+        if($descripcion !== null){
             $this->descripcion = $descripcion;
         }
 
-        if($precio != null){
+        if($precio !== null){
             $this->precio = $precio;
         }
 
-        if($imagen != null){
+        if($imagen !== null){
             $this->imagen = $imagen;
         }
 
-        if($activo != null){
+        if($activo !== null){
             $this->activo = $activo;
         }
 
-        if($categoria != null){
+        if($categoria !== null){
             $this ->categoria = $categoria;
         }
     }

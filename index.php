@@ -1,6 +1,7 @@
 <?php
 
 include_once("config/parameters.php");
+session_start();
 
 function showError($code, $message)
 {
